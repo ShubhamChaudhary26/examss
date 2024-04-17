@@ -1,0 +1,49 @@
+<!-- 29)write a program to take number from user and find it is prime or not using JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+    <script>
+        function checkPrime() {
+            var userInput = document.getElementById("number").value;
+            var number = parseInt(userInput);
+
+            if (isNaN(number)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            var isPrime = true;
+
+            // Prime numbers are greater than 1
+            if (number <= 1) {
+                isPrime = false;
+            } else {
+                // Check for factors from 2 to the number - 1
+                for (var i = 2; i < number; i++) {
+                    // If the number is divisible by any number other than 1 and itself, it's not prime
+                    if (number % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isPrime) {
+                alert(number + " is a prime number.");
+            } else {
+                alert(number + " is not a prime number.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Prime Number Checker</h2>
+    <label for="number">Enter a number:</label>
+    <input type="text" id="number">
+    <button onclick="checkPrime()">Check Prime</button>
+</body>
+</html>

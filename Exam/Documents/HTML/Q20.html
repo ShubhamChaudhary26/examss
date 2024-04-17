@@ -1,0 +1,38 @@
+<!-- 20)Implement mouse over and mouse out event -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Hover over me</div>
+
+    <script>
+        var box = document.getElementById("box");
+
+        // Mouseover event handler
+        box.onmouseover = function() {
+            box.style.backgroundColor = "lightgreen";
+            box.textContent = "Mouse over";
+        };
+
+        // Mouseout event handler
+        box.onmouseout = function() {
+            box.style.backgroundColor = "lightblue";
+            box.textContent = "Hover over me";
+        };
+    </script>
+</body>
+</html>

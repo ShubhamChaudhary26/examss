@@ -1,0 +1,35 @@
+<!-- 21)Implement mouse click event and display table of number taken from user.(Draw DOM tree) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+    <label for="number">Enter a number:</label>
+    <input type="text" id="numberInput">
+    <button onclick="displayMultiplicationTable()">Display Table</button>
+    <div id="multiplicationTable"></div>
+
+    <script>
+        function displayMultiplicationTable() {
+            var numberInput = document.getElementById("numberInput").value;
+            var number = parseInt(numberInput);
+
+            if (isNaN(number)) {
+                document.getElementById("multiplicationTable").textContent = "Please enter a valid number.";
+            } else {
+                var table = "";
+                for (var i = 1; i <= 10; i++) {
+                    var result = number * i;
+                    table += `${number} x ${i} = ${result}<br>`;
+                }
+                document.getElementById("multiplicationTable").innerHTML = table;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- 23)Implement different ways of displaying output on screen using java script. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Output in JavaScript</title>
+</head>
+<body>
+    <h2>Display Output in JavaScript</h2>
+    
+    <script>
+        // Using document.write()
+        document.write("<p>Using document.write(): Hello, World!</p>");
+
+        // Using console.log()
+        console.log("Using console.log(): Hello, World!");
+
+        // Using window.alert()
+        window.alert("Using window.alert(): Hello, World!");
+
+        // Using document.getElementById().innerHTML
+        document.getElementById("output").innerHTML = "<p>Using document.getElementById().innerHTML: Hello, World!</p>";
+
+        // Using document.createElement() and appendChild()
+        var textNode = document.createTextNode("Using document.createElement() and appendChild(): Hello, World!");
+        var outputDiv = document.createElement("div");
+        outputDiv.appendChild(textNode);
+        document.body.appendChild(outputDiv);
+    </script>
+
+    <!-- Output div for document.getElementById().innerHTML -->
+    <div id="output"></div>
+</body>
+</html>

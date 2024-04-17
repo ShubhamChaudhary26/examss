@@ -1,0 +1,47 @@
+<!-- 19)Design web page contains username,password,Confirmpassword,Contact fields and apply all form validation. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="Q19.html" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required pattern="[0-9]{10}" title="Please enter 10 digits">
+        <br>
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        window.onload = function() {
+            document.querySelector("form").onsubmit = function() {
+                var password = document.getElementById("password").value;
+                var confirm_password = document.getElementById("confirm_password").value;
+
+                if (password != confirm_password) {
+                    alert("Passwords do not match");
+                    return false;
+                }
+            };
+        };
+    </script>
+</body>
+</html>
